@@ -5,9 +5,9 @@ import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects/" },
-  { label: "About", href: "/about/" },
+  { label: "Home", href: "/about-me/" },
+  { label: "Projects", href: "/about-me/projects/" },
+  { label: "About", href: "/about-me/about/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -53,7 +53,8 @@ const textLinks: { label: string; href: string }[] = [
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
+                    (href !== "/about-me/" &&
+                      Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}
