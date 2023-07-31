@@ -1,0 +1,196 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<section class="box skills">
+  <h2>Skills</h2>
+  <div
+    class="w-full px-10 md:px-20 py-8 rounded-md flex flex-row justify-center flex-wrap gap-2"
+  >
+    <!-- Programming Languages -->
+    <img
+      src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
+    />
+    <!-- C -->
+    <img
+      src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"
+    />
+    <!-- C++ -->
+    <img
+      src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"
+    />
+    <!-- Java -->
+    <!-- Miscellaneous -->
+    <img
+      src="https://img.shields.io/badge/Data_Structures_and_Algorithms-005571?style=for-the-badge&logo=data&logoColor=white"
+    />
+    <!-- Data Structures and Algorithms -->
+
+    <!-- Web Development -->
+    <img
+      src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"
+    />
+    <!-- JavaScript -->
+    <img
+      src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
+    />
+    <!-- TypeScript -->
+    <img
+      src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"
+    />
+    <!-- HTML -->
+    <img
+      src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"
+    />
+    <!-- CSS -->
+    <img
+      src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+    />
+    <!-- React -->
+    <img
+      src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"
+    />
+    <!-- Bootstrap -->
+
+    <!-- Backend and Server-Side -->
+    <img
+      src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"
+    />
+    <!-- Node.js -->
+
+    <!-- Version Control and Development Tools -->
+    <img
+      src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
+    />
+    <!-- Git -->
+    <img
+      src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+    />
+    <!-- GitHub -->
+
+    <!-- Design and Prototyping -->
+    <img
+      src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"
+    />
+    <!-- Figma -->
+    <img
+      src="https://img.shields.io/badge/canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white"
+    />
+    <!-- Canva -->
+    <img
+      src="https://img.shields.io/badge/Astro-FF4088?style=for-the-badge&logo=astro&logoColor=white"
+    />
+    <!-- Astro -->
+    <img
+      src="https://img.shields.io/badge/markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"
+    />
+    <!-- Markdown -->
+
+    <!-- Database -->
+    <img
+      src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"
+    />
+    <!-- MongoDB -->
+    <img
+      src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white"
+    />
+    <!-- MySQL -->
+
+    <!-- Operating Systems -->
+    <img
+      src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"
+    />
+    <!-- Linux -->
+    <img
+      src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
+    />
+    <!-- Shell Script -->
+
+    <!-- IDE and Development Environment -->
+    <img
+      src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white"
+    />
+    <!-- Arduino IDE -->
+
+    <!-- Cloud Services -->
+    <img
+      src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"
+    />
+    <!-- Firebase -->
+  </div>
+</section>
+
+<style>
+  .box {
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .skills h2 {
+    font-size: var(--text-lg);
+  }
+
+  .skills p {
+    color: var(--gray-400);
+  }
+
+  @media (min-width: 50em) {
+    .box {
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+      gap: 1rem;
+    }
+
+    .skills h2 {
+      font-size: var(--text-2xl);
+    }
+    .md\:px-20 {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    .px-10 {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+    .gap-2 {
+      gap: 0.5rem;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+    .flex-row {
+      flex-direction: row;
+    }
+    .w-full {
+      width: 100%;
+    }
+    .flex {
+      display: flex;
+    }
+  }
+</style>
