@@ -35,9 +35,15 @@ const projects = (await getCollection("work"))
           align="start"
         >
           <div class="roles">
-            <Pill><Icon icon="linkedin-logo" size="1.33em" /> LinkedIn</Pill>
-            <Pill><Icon icon="github-logo" size="1.33em" /> GitHub</Pill>
-            <Pill><Icon icon="pencil-line" size="1.33em" /> Resume</Pill>
+            <a href="https://www.linkedin.com/in/naik-ji">
+              <Pill><Icon icon="linkedin-logo" size="1.33em" /> LinkedIn</Pill>
+            </a>
+            <a href="https://github.com/vigneshsnaik">
+              <Pill><Icon icon="github-logo" size="1.33em" /> GitHub</Pill>
+            </a>
+            <a href="">
+              <Pill><Icon icon="pencil-line" size="1.33em" /> Resume</Pill>
+            </a>
           </div>
         </Hero>
 
@@ -53,7 +59,7 @@ const projects = (await getCollection("work"))
     </div>
 
     <main class="wrapper stack gap-20 lg:gap-48">
-      <section class="section with-background with-cta">
+      <!-- <section class="section with-background with-cta">
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Selected Work</h3>
           <p>
@@ -80,7 +86,7 @@ const projects = (await getCollection("work"))
             <Icon icon="arrow-right" size="1.2em" />
           </CallToAction>
         </div>
-      </section>
+      </section> -->
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
