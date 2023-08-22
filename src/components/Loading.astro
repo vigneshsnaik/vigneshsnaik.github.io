@@ -1,0 +1,18 @@
+<div class="loading-circle"></div>
+
+<style>
+  .loading-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--gray-999);
+    border-top-color: var(--gray-100);
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
