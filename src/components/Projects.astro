@@ -7,19 +7,19 @@ const projects = [
     content:
       "This webiste is built using Astro framework and deployed Github Pages. A simple static website built to showcase my projects, projects and my interests. ",
     lastUpdated: "2023-09-14",
-    currStatus: "Completed",
+    completed: true,
     link: "https://vigneshsnaik.github.io/about-me/",
   },
-//   {
-//     id: 2,
-//     title: "xTend",
-//     description: "An automated Ambulance summoning device",
-//     content:
-//       "It is an ambulance summoning device for health emergencies. Health emergency detection using Pulse-oximeter sensor and a medical history record system. Built during Young Innovators program (K-DISC) '22 and Samsung Solve for Tomorrow '22. Used Arduino, Flutter, NodeMCU, Firebase API and sensors. It is a device that can be installed in a car and can be used to summon an ambulance in case of an emergency. It uses a heart rate sensor to detect the heart rate of the driver and if it detects a heart attack, it automatically sends a message to the nearest hospital and the ambulance is dispatched.",
-//     lastUpdated: "2023-02-14",
-//     currStatus: "Development",
-//     link: "",
-//   },
+  {
+    id: 2,
+    title: "xTend",
+    description: "An automated Ambulance summoning device",
+    content:
+      "It is an ambulance summoning device for health emergencies. Health emergency detection using Pulse-oximeter sensor and a medical history record system. Built during Young Innovators program (K-DISC) '22 and Samsung Solve for Tomorrow '22. Used Arduino, Flutter, NodeMCU, Firebase API and sensors. It is a device that can be installed in a car and can be used to summon an ambulance in case of an emergency. It uses a heart rate sensor to detect the heart rate of the driver and if it detects a heart attack, it automatically sends a message to the nearest hospital and the ambulance is dispatched.",
+    lastUpdated: "2023-02-14",
+    completed: false,
+    link: "",  
+  },
   {
     id: 3,
     title: "Fresher Registration Portal",
@@ -27,7 +27,7 @@ const projects = [
     content:
       "A portal for registering freshers for the college. Built using MERN stack. Used React, NodeJS, ExpressJS, MongoDB, Bootstrap. It is a portal for registering freshers for the college. It has a login system for the admin and the students. The admin can add, delete and update the students. The students can register themselves and download the registration and declaration forms as a PDF file after registration.",
     lastUpdated: "2023-08-13",
-    currStatus: "Completed",
+    completed: true,
     link: "https://mec.ac.in",
   },
   {
@@ -38,8 +38,15 @@ const projects = [
     content:
       "An application for tokenizing physical assets and trading them. Technologies used: React, NodeJS, ExpressJS, PostgreSQL, Material UI. It is an application for tokenizing physical assets and trading them. It has a login system for the admin and the users. The admin can add, delete and update the assets. The users can buy and sell the assets. The Government can view the assets and the transactions, helping them to keep track of the assets as well as detecting tax evasions.",
     lastUpdated: "2023-09-14",
-    currStatus: "Development",
+    completed: false,
     link: "",
+    technologies: [
+      "React",
+      "NodeJS",
+      "ExpressJS",
+      "PostgreSQL",
+      "Material UI",
+    ],
   },
 ];
 import Modal from "./Modal.astro";
@@ -54,26 +61,24 @@ import Modal from "./Modal.astro";
       projects.map((project) => (
         <div class="project">
           <h2>{project.title}</h2>
-          
+
           <p>
             {project.description}
-            <a href=`#${project.id}`> more
-                </a>
-            </p>
-            <Modal project={project} />
+            <a href={`#${project.id}`}> more</a>
+          </p>
+          <Modal project={project} />
         </div>
       ))
     }
   </div>
 </section>
 <style>
-
   .box {
-     border: 1px solid var(--gray-800); 
+    border: 1px solid var(--gray-800);
     border-radius: 0.75rem;
     padding: 1.5rem;
     background-color: var(--gray-999_40);
-     box-shadow: var(--shadow-sm); 
+    box-shadow: var(--shadow-sm);
   }
 
   .projects {
@@ -88,11 +93,10 @@ import Modal from "./Modal.astro";
 
   .projects p {
     color: var(--gray-400);
-
   }
-  .project{
-    padding-bottom:20px;
-}
+  .project {
+    padding-bottom: 20px;
+  }
 
   @media (min-width: 50em) {
     .box {
