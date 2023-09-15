@@ -48,7 +48,7 @@ import Modal from "./Modal.astro";
 <section class="box projects">
   <h2>Projects</h2>
   <div
-    class="w-full px-10 md:px-20 py-8 rounded-md flex flex-row justify-center flex-wrap gap-2"
+    class="w-full px-10 md:px-20 py-8 rounded-md flex flex-row center flex-wrap gap-2"
   >
     {
       projects.map((project) => (
@@ -66,14 +66,14 @@ import Modal from "./Modal.astro";
     }
   </div>
 </section>
-
 <style>
+
   .box {
-    border: 1px solid var(--gray-800);
+     border: 1px solid var(--gray-800); 
     border-radius: 0.75rem;
     padding: 1.5rem;
     background-color: var(--gray-999_40);
-    box-shadow: var(--shadow-sm);
+     box-shadow: var(--shadow-sm); 
   }
 
   .projects {
@@ -82,16 +82,16 @@ import Modal from "./Modal.astro";
     gap: 3rem;
   }
 
-  .projects h3 {
+  .projects h2 {
     font-size: var(--text-lg);
   }
 
   .projects p {
     color: var(--gray-400);
   }
-  .project {
-    padding: 1rem;
-  }
+  .project{
+    padding-bottom:20px;
+}
 
   @media (min-width: 50em) {
     .box {
@@ -129,7 +129,7 @@ import Modal from "./Modal.astro";
       gap: 0.5rem;
     }
     .center {
-      text-align: center;
+      text-align: left;
     }
     .flex-wrap {
       flex-wrap: wrap;
