@@ -112,9 +112,8 @@ const { id, open, project } = Astro.props;
     word-wrap: break-word;
   }
   .content {
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 0 5% 1em 5%;
-    max-height: 60vh;
   }
   p {
     margin: 0 0 1em;
@@ -125,8 +124,4 @@ const { id, open, project } = Astro.props;
     .popup {
       max-width: 80vh;
     }
-    .content {
-      max-height: 60vh;
-    }
-  }
 </style>
