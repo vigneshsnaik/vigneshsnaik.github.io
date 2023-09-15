@@ -4,7 +4,7 @@ const { id, open, project } = Astro.props;
 ---
 
 <!-- Modal -->
-<div id=`${project.id}` class="overlay light">
+<div id=`${project.id}` class="overlay">
   <div class="popup">
     <a class="close" href="#">&times;</a>
     <h4>
@@ -108,14 +108,13 @@ const { id, open, project } = Astro.props;
     background-color: var(--gray-999);
     box-shadow: var(--shadow-sm);
     width: 80%;
-    max-height: 80%;
     max-width: 1000px;
     word-wrap: break-word;
   }
   .content {
-    max-height: 400px;
     overflow-y: scroll;
     padding: 0 5% 1em 5%;
+    max-height: 60vh;
   }
   p {
     margin: 0 0 1em;
@@ -123,14 +122,11 @@ const { id, open, project } = Astro.props;
     text-align: justify;
   }
   @media screen and (max-width: 700px) {
-    .box {
-      width: 70%;
-    }
     .popup {
-      width: 70%;
+      max-width: 80vh;
     }
     .content {
-      max-height: 300px;
+      max-height: 60vh;
     }
   }
 </style>
