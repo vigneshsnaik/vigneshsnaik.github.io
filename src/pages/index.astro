@@ -15,6 +15,7 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
@@ -59,6 +60,7 @@ const projects = (await getCollection("work"))
       </header>
 
       <Skills />
+      <Projects />
     </div>
 
     <!-- 

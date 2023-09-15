@@ -1,0 +1,86 @@
+---
+import Pill from "./Pill.astro";
+const { id, open, project } = Astro.props;
+---
+
+<!-- Modal -->
+
+<div id=`${project.id}` class="overlay light">
+    <div class="popup">
+        <a class="close" href="#">&times;</a>
+        <a href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        >    <h4>{project.title}</h4>
+    </a> 
+    <div class="content">
+        <img src=`https://img.shields.io/badge/status-${project.currStatus}-${project.currStatus==="Completed"? "green": "red"}.svg`/><br/><br/>
+      <p>{project.content}</p>
+    </div>
+    <div class="content">
+        <p>Last updated : {project.lastUpdated}</p>
+  </div>
+  
+    
+</div>
+
+<style>
+  h4 {
+    text-align: center;
+    color: var(--gray-800)
+    text-shadow: 0 1px 0 #fff;
+    margin: 50px 0;
+  }
+
+  .overlay {
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--gray-999);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+      background: rgba(255, 255, 255, 0.5);
+      .close {
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--gray-100);}
+    &:target {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .popup {
+    margin: 75px auto;
+    padding: 20px;
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    background-color: var(--gray-999);
+    box-shadow: var(--shadow-sm);
+    width :80%;
+    max-width: 1000px;
+    }
+    .content {
+      max-height: 400px;
+      overflow: auto;
+    padding: 0 5% 1em 5%  ;
+        
+}
+    p {
+      margin: 0 0 1em;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  
+</style>
