@@ -47,7 +47,30 @@ const { id, open, project } = Astro.props;
             />
           </>
         )
-      }
+      }{project.link2 ? (
+          <a
+            href={project.link2}
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9"
+                stroke="#666"
+                stroke-width="3"
+                fill="none"
+              />
+            </svg>
+          </a>
+        ) : (
+          <></>
+        )}
     </h4>
     <div class="content">
       <p>
