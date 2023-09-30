@@ -1,4 +1,5 @@
 ---
+import { string } from "astro/zod";
 import Pill from "./Pill.astro";
 const { id, open, project } = Astro.props;
 ---
@@ -47,7 +48,8 @@ const { id, open, project } = Astro.props;
             />
           </>
         )
-      }{project.link2 ? (
+      }{
+        project.link2 ? (
           <a
             href={project.link2}
             class="link"
@@ -69,14 +71,25 @@ const { id, open, project } = Astro.props;
             </svg>
           </a>
         ) : (
-          <></>
-        )}
+          <div />
+        )
+      }
     </h4>
     <div class="content">
       <p>
         {project.content}
       </p>
       <p>Last updated : {project.lastUpdated}</p>
+      <p>
+        Technologies used :
+        <ul>
+          {
+            project.technologies.map((technology: string) => (
+              <li>{technology}</li>
+            ))
+          }
+        </ul>
+      </p>
     </div>
   </div>
 </div>
@@ -147,4 +160,5 @@ const { id, open, project } = Astro.props;
     .popup {
       max-width: 80vh;
     }
+  }
 </style>
