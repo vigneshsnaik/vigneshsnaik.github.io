@@ -79,17 +79,15 @@ const { id, open, project } = Astro.props;
       <p>
         {project.content}
       </p>
+      Technologies used :
+      <ul>
+        {
+          project.technologies.map((technology: string) => (
+            <li>{technology}</li>
+          ))
+        }
+      </ul>
       <p>Last updated : {project.lastUpdated}</p>
-      <p>
-        Technologies used :
-        <ul>
-          {
-            project.technologies.map((technology: string) => (
-              <li>{technology}</li>
-            ))
-          }
-        </ul>
-      </p>
     </div>
   </div>
 </div>
