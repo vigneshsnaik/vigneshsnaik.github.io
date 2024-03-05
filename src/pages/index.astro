@@ -38,7 +38,7 @@ const projects = (await getCollection("work"))
           tagline="Aspiring Developer from Kochi, Kerala, India."
           align="start"
         >
-          <a href="/about-me/about" target="_blank" rel="noopener noreferrer">
+          <a href="//about" target="_blank" rel="noopener noreferrer">
             <svg
               width="24"
               height="24"
@@ -59,7 +59,7 @@ const projects = (await getCollection("work"))
             <a href="https://github.com/vigneshsnaik">
               <Pill><Icon icon="github-logo" size="1.33em" /> GitHub</Pill>
             </a>
-            <a href="https://vigneshsnaik.github.io/about-me">
+            <a href="https://vigneshsnaik.github.io/">
               <Pill><Icon icon="pencil-line" size="1.33em" /> Resume</Pill>
             </a>
           </div>
@@ -101,7 +101,7 @@ const projects = (await getCollection("work"))
         </div>
 
         <div class="cta">
-          <CallToAction href="/about-me/work/">
+          <CallToAction href="//work/">
             View All
             <Icon icon="arrow-right" size="1.2em" />
           </CallToAction>
@@ -205,7 +205,8 @@ const projects = (await getCollection("work"))
     aspect-ratio: calc(2.25 / var(--bg-scale));
     top: 0;
     transform: translateY(-75%) translateX(-50%);
-    background: url("/assets/backgrounds/noise.png") top center/220px repeat,
+    background:
+      url("/assets/backgrounds/noise.png") top center/220px repeat,
       var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
       var(--gray-999);
     background-blend-mode: overlay, normal, normal, normal;

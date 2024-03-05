@@ -5,8 +5,8 @@ import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/about-me/" },
-  { label: "About", href: "/about-me/about/" },
+  { label: "Home", href: "//" },
+  { label: "About", href: "//about/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -44,8 +44,7 @@ const textLinks: { label: string; href: string }[] = [
                 {
                   active:
                     Astro.url.pathname === href ||
-                    (href !== "/about-me/" &&
-                      Astro.url.pathname.startsWith(href)),
+                    (href !== "//" && Astro.url.pathname.startsWith(href)),
                 },
               ]}
               href={href}
@@ -278,7 +277,8 @@ const textLinks: { label: string; href: string }[] = [
     .link {
       padding: 0.5rem 1rem;
       border-radius: 999rem;
-      transition: color var(--theme-transition),
+      transition:
+        color var(--theme-transition),
         background-color var(--theme-transition);
     }
 
