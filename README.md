@@ -4,6 +4,10 @@
 
 This repository contains the source code for [Vignesh S Naik's personal portfolio website](https://vigneshsnaik.github.io), built using the Astro framework. The website showcases projects, skills, and professional experience.
 
+### Built With
+- [Astro](https://astro.build/): Astro is a modern front-end framework for building fast, content-focused websites.
+
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
