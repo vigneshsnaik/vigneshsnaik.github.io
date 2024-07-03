@@ -1,0 +1,66 @@
+---
+const items = [
+  {
+    position: "Chairperson",
+    at: "TLE MEC",
+    description: "The competitive coding and DSA club",
+    duration: "2024-25",
+  },
+  {
+    position: "Competitive Programming Lead",
+    at: "TLE MEC",
+    description: "The competitive coding and DSA club",
+    duration: "2023-24",
+  },
+  {
+    position: "Web Admin",
+    at: "MACS MEC",
+    description: "The association of Computer Science Engineering students",
+    duration: "2024-25",
+  },
+  {
+    position: "Project Manager",
+    at: "College Fresher Registration Portal",
+    description: "A portal for registering freshers for the college",
+    duration: "2023-24",
+  },
+];
+---
+
+<ul>
+  {
+    items.map((item) => (
+      <li>
+        <>
+          <b>
+            {item.position}, <span class="duration">{item.duration}</span>
+          </b>
+          {item.at}
+          <p>{item.description}</p>
+        </>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    padding: 0;
+  }
+
+  ul li {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    font-size: 1em;
+  }
+
+  ul li .duration {
+    float: right;
+    margin-left: auto;
+  }
+  ul li p {
+    margin: 0;
+    padding: 0 0 0 1.5em;
+    font-size: 0.75em;
+  }
+</style>
