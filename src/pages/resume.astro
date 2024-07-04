@@ -1,0 +1,50 @@
+---
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Resume">
+  <div class="button">
+    <a href="/assets/resume.pdf" download>
+      <Pill>Download</Pill>
+    </a>
+  </div>
+  <iframe src="/assets/resume.pdf#toolbar=1"></iframe>
+</BaseLayout>
+
+<style>
+  /* Default styles */
+  iframe {
+    margin: auto auto;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    /* Styles for screens smaller than 768px */
+    iframe {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for screens between 769px and 1024px */
+    iframe {
+      width: 80vw;
+      height: 80vh;
+    }
+  }
+  @media (min-width: 1025px) {
+    /* Styles for screens larger than 1025px */
+    iframe {
+      width: 60vw;
+      height: 60vh;
+    }
+  }
+  .button {
+    margin: 1em auto;
+    display: flex;
+  }
+</style>
