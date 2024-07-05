@@ -22,7 +22,9 @@ const { id, open, project } = Astro.props;
       {
         project.links.map((link: { url: string; title: string }) => (
           <div class="link">
-            <a href={link.url}>{link.title}</a>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.title}
+            </a>
             <svg
               width="24"
               height="24"
