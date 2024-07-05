@@ -139,7 +139,11 @@ const projects = (await getCollection("work"))
   }
 
   .roles {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5rem;
   }
 
   .hero img {
@@ -159,7 +163,9 @@ const projects = (await getCollection("work"))
     }
 
     .roles {
-      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      margin: auto 0;
       display: flex;
       gap: 0.5rem;
     }
