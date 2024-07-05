@@ -71,7 +71,7 @@ The website will be available at `http://localhost:3000`.
 ## Contact
 
 Vignesh S Naik  
-[Email](mailto:vigneshsnaik@example.com)  
+[Email](mailto:vigneshsnaik03@gmail.com)  
 [Website](https://vigneshsnaik.github.io)
 
 ---
