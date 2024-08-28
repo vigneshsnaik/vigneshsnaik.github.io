@@ -1,56 +1,167 @@
 ---
-interface Props {
-  href: string;
-}
-
-const { href } = Astro.props;
+import Pill from "./Pill.astro";
+import Icon from "./Icon.astro";
 ---
+<form id="my-form" action={import.meta.env.FORM_URL} method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" />
+  <label>Email:</label>
+  <input type="email" name="email" />
+  <label>Message:</label>
+  <textarea name="message" rows="5" style="resize: none;"></textarea>
+  <button id="my-form-button">
+    <Pill>Send <Icon icon="paper-plane-tilt" /></Pill></button
+  >
+</form>
 
-<a href={href}><slot /></a>
+<script>
+  var form = document.getElementById("my-form") as HTMLFormElement;
+  
+  async function handleSubmit(event: Event) {
+    event.preventDefault();
+    var data = new FormData(event.target as HTMLFormElement);
+    if (!event.target) return;
+    fetch((event.target as HTMLFormElement).action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          window.alert("Thanks for your submission!");
+          form.reset();
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              window.alert(
+                data["errors"].map((error: any) => error["message"]).join(", ")
+              );
+            } else {
+              window.alert("Oops! There was a problem submitting your form");
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        window.alert("Oops! There was a problem submitting your form");
+      });
+  }
+  form.addEventListener("submit", handleSubmit);
+</script>
 
 <style>
-  a {
-    position: relative;
+  .alert {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-900);
+    color: var(--gray-100);
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+  form {
     display: flex;
-    place-content: center;
-    text-align: center;
-    padding: 0.56em 2em;
-    gap: 0.8em;
-    color: var(--accent-text-over);
-    text-decoration: none;
-    line-height: 1.1;
-    border-radius: 999rem;
-    overflow: hidden;
-    background: var(--gradient-accent-orange);
-    box-shadow: var(--shadow-md);
-    white-space: nowrap;
+    flex-direction: column;
+    width: 100%;
+  }
+  label {
+    margin: 1rem 0 0.25rem 0;
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+  input {
+    padding: 0.5rem;
+    border: 1px solid var(--gray-900);
+    border-radius: 0.25rem;
+    background-color: var(--gray-800);
+    color: var(--gray-100);
+  }
+  input:focus {
+    outline: none;
   }
 
-  @media (min-width: 20em) {
-    a {
-      font-size: var(--text-lg);
-    }
+  button {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    width: max-content;
+    margin: 1rem auto 0 auto;
+  }
+  textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--gray-900);
+    border-radius: 0.25rem;
+    background-color: var(--gray-800);
+    color: var(--gray-100);
+    width: 100%;
+    scrollbar-color: var(--gray-300) var(--gray-800);
+    overflow: -moz-hidden-unscrollable;
+  }
+  textarea:focus {
+    outline: none;
   }
 
-  /* Overlay for hover effects. */
-  a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    transition: background-color var(--theme-transition);
-    mix-blend-mode: overlay;
+  p {
+    font-size: var(--text-sm);
   }
-
-  a:focus::after,
-  a:hover::after {
-    background-color: hsla(var(--gray-999-basis), 0.3);
+  .Pill {
+    width: fit-content;
   }
 
   @media (min-width: 50em) {
-    a {
-      padding: 1.125rem 2.5rem;
-      font-size: var(--text-xl);
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: var(--text-sm);
+    }
+
+    input {
+      padding: 0.5rem;
+      border: 1px solid var(--gray-900);
+      border-radius: 0.25rem;
+      background-color: var(--gray-800);
+      color: var(--gray-100);
+    }
+    input:focus {
+      outline: none;
+    }
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid var(--gray-900);
+      border-radius: 0.25rem;
+      background-color: var(--gray-800);
+      color: var(--gray-100);
+      scrollbar-color: var(--gray-300) var(--gray-800);
+      overflow: -moz-hidden-unscrollable;
+    }
+    textarea:focus {
+      outline: none;
+    }
+
+    button {
+      padding: 0;
+      background-color: transparent;
+      color: inherit;
+      border: none;
+      cursor: pointer;
+      width: max-content;
+    }
+
+    p {
+      font-size: var(--text-sm);
+    }
+
+    .Pill {
+      width: fit-content;
     }
   }
 </style>
