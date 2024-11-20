@@ -42,6 +42,11 @@ const { id, open, project } = Astro.props;
         ))
       }
     </div>
+    <p style="text-align: center;">
+      {project.period.from} -
+      {project.period.to !== project.period.from ? project.period.to : ""}
+    </p>
+
     <div class="content">
       <p>
         {project.content}
@@ -54,7 +59,6 @@ const { id, open, project } = Astro.props;
           ))
         }
       </ul>
-      <!-- <p>Last updated : {project.lastUpdated}</p> -->
     </div>
   </div>
 </div>
