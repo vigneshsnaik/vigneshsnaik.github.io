@@ -32,33 +32,37 @@ const { Content } = await entry.render();
     <div class="stack gap-15">
       <header>
         <div class="wrapper stack gap-2">
-          <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a
-          >
-          <Hero title={entry.data.title} align="start">
-            <div class="details">
-              <div class="tags">
-                {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-              </div>
-              <p class="description">{entry.data.description}</p>
+          <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
+          <Hero
+            title={entry.data.title}
+            tagline={`${entry.data.period.from}${
+              entry.data.period.to ? ` — ${entry.data.period.to}` : ""
+            }`}
+            align="start"
+          />
+          <div class="details">
+            <div class="tags">
+              {entry.data.tags.map((tag: string) => <img src={tag} alt=" " />)}
             </div>
-          </Hero>
-        </div>
-      </header>
-      <main class="wrapper">
-        <div class="stack gap-10 content">
-          {
-            entry.data.img && (
-              <img src={entry.data.img} alt={entry.data.img_alt || ""} />
-            )
-          }
-          <div class="content">
-            <Content />
+            <p class="description">{entry.data.description}</p>
           </div>
         </div>
-      </main>
+      </header>
     </div>
-    <ContactCTA />
+    <main class="wrapper">
+      <div class="stack gap-10 content">
+        {
+          entry.data.img && (
+            <img src={entry.data.img} alt={entry.data.img_alt || ""} />
+          )
+        }
+        <div class="content">
+          <Content />
+        </div>
+      </div>
+    </main>
   </div>
+  <!-- <ContactCTA /> -->
 </BaseLayout>
 
 <style>
@@ -83,11 +87,13 @@ const { Content } = await entry.render();
   .tags {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .description {
     font-size: var(--text-lg);
     max-width: 54ch;
+    margin-top: 1rem;
   }
 
   .content {
