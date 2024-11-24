@@ -6,6 +6,10 @@ export const collections = {
       title: z.string(),
       description: z.string(),
       priority: z.coerce.number(),
+      period: z.object({
+        from: z.string(),
+        to: z.string().optional(),
+      }),
       tags: z.array(z.string()),
       img: z.string(),
       img_alt: z.string().optional(),
