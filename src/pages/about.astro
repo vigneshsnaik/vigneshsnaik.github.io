@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from "../components/ContactCTA.astro";
+import CallToAction from "../components/CallToAction.astro";
 import Education from "../components/Education.astro";
 import Hero from "../components/Hero.astro";
 import Positions from "../components/Positions.astro";
@@ -14,16 +14,16 @@ import Positions from "../components/Positions.astro";
   <div class="stack gap-20">
     <main class="wrapper about">
       <!-- <Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Vignesh S Naik at work with a colleague"
-				/>
-			</Hero> -->
+        title="About"
+        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Vignesh S Naik at work with a colleague"
+        />
+      </Hero> -->
 
       <section>
         <h2 class="section-title">Background</h2>
@@ -44,17 +44,19 @@ import Positions from "../components/Positions.astro";
         <div class="content">
           <Education />
         </div>
-        <h2 class="section-title">Positions of Responsibilty</h2>
+        <h2 class="section-title">Positions of Responsibility</h2>
         <div class="content">
           <Positions />
         </div>
-        <h2 class="section-title">Leetcode Stats</h2>
+      </section>
+      <section>
+        <h2 class="section-title">Send Me a Message</h2>
         <div class="content">
+          <CallToAction />
         </div>
       </section>
     </main>
-
-    <ContactCTA />
+    
   </div>
 </BaseLayout>
 
@@ -65,11 +67,16 @@ import Positions from "../components/Positions.astro";
     gap: 3.5rem;
   }
 
-  div .content p {
+  .content p {
     font-size: var(--text-lg);
     color: var(--gray-200);
     text-align: justify;
   }
+
+  .cta {
+    width: 100%;
+  }
+
   img {
     margin-top: 1.5rem;
     border-radius: 1.5rem;
@@ -84,7 +91,6 @@ import Positions from "../components/Positions.astro";
   }
 
   .section-title {
-    grid-column-start: 1;
     font-size: var(--text-xl);
     color: var(--gray-0);
   }
@@ -93,14 +99,14 @@ import Positions from "../components/Positions.astro";
     grid-column: 2 / 4;
   }
 
-  .content :global(a) {
+  .content a {
     text-decoration: 1px solid underline transparent;
     text-underline-offset: 0.25em;
     transition: text-decoration-color var(--theme-transition);
   }
 
-  .content :global(a:hover),
-  .content :global(a:focus) {
+  .content a:hover,
+  .content a:focus {
     text-decoration-color: currentColor;
   }
 
@@ -110,7 +116,7 @@ import Positions from "../components/Positions.astro";
       grid-template-columns: 1fr 60% 1fr;
     }
 
-    .about > :global(:first-child) {
+    .about > :first-child {
       grid-column-start: 2;
     }
 
