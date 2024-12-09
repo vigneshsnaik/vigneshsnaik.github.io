@@ -80,7 +80,7 @@ The architecture comprises three modules:
 #### Collaborators
 
 - <a href="https://github.com/Arshad-3" target="_blank">Mohammed Arshad</a>
-- <a href="https://github.com/in/Mekhadev2025" target="_blank">Mekha L</a>
+- <a href="https://github.com/Mekhadev2025" target="_blank">Mekha L</a>
 - Srilakshmi R
 - **<a href="https://github.com/vigneshsnaik" target="_blank">Vignesh S Naik</a>**
 
