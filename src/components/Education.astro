@@ -4,18 +4,33 @@ const items = [
     institution: "Model Engineering College, Thrikkakara",
     degree: "B.Tech in Computer Science and Engineering",
     duration: "2021-2025",
+    logo: {
+      url: "https://www.mec.ac.in",
+      src: "/assets/logos/mec.png",
+      alt: "Model Engineering College logo",
+    },
   },
   {
     institution: "TD HSS, Thuravoor",
     degree: "Higher Secondary Education",
     duration: "2019-2021",
     percentage: "97.8%",
+    logo: {
+      url: "",
+      src: "/assets/logos/tdhss.png",
+      alt: "TD HSS Thuravoor logo",
+    },
   },
   {
     institution: "Kendriya Vidyalaya No.1, Kochi",
     degree: "Matriculation",
     duration: "2009-2019",
     percentage: "89.4%",
+    logo: {
+      url: "https://no1cochin.kvs.ac.in/",
+      src: "/assets/logos/kvs.svg",
+      alt: "Kendriya Vidyalaya No.1 Kochi logo",
+    },
   },
 ];
 ---
@@ -24,7 +39,16 @@ const items = [
   {
     items.map((item) => (
       <li>
-        <>
+        <a href={item.logo.url} target="_blank" rel="noopener noreferrer">
+          {item.logo.src && (
+            <img
+              src={item.logo.src}
+              alt={item.logo.alt}
+                style="width: 4em; height: 4em; object-fit: contain; margin-right: 1em; float: left;"
+            />
+          )}
+        </a>
+        <span>
           <b>
             {item.institution} <span class="duration">{item.duration}</span>
           </b>
@@ -36,7 +60,7 @@ const items = [
             ) : null}
             <br />
           </p>
-        </>
+        </span>
       </li>
     ))
   }
@@ -44,7 +68,6 @@ const items = [
 
 <style>
   ul {
-    border-left: 2px solid var(--gray-300);
     padding: 0;
   }
 
@@ -63,20 +86,5 @@ const items = [
     margin: 0;
     padding: 0 0 0 1.5em;
     font-size: 0.75em;
-  }
-
-  ul li:before {
-    display: inline-block;
-    width: 1.2em;
-    height: 1.2em;
-    margin: 0 0.5em 0 -0.65em;
-    border-radius: 50%;
-    content: " ";
-    text-align: center;
-    background: var(--gray-100);
-    border: 2px solid var(--gray-300);
-    color: var(--gray-500);
-    font-size: 0.8em;
-    line-height: 1.2em;
   }
 </style>

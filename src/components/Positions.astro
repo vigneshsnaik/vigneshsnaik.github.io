@@ -5,24 +5,44 @@ const items = [
     at: "TLE MEC",
     description: "The competitive coding and DSA club",
     duration: "2024-25",
-  },
-  {
-    position: "Competitive Programming Lead",
-    at: "TLE MEC",
-    description: "The competitive coding and DSA club",
-    duration: "2023-24",
+    logo: {
+      url: "https://tle.mec.ac.in",
+      src: "/assets/logos/tle.svg",
+      alt: "",
+    },
   },
   {
     position: "Web Admin",
     at: "MACS MEC",
     description: "The association of Computer Science Engineering students",
     duration: "2024-25",
+    logo: {
+      url: "https://mec.ac.in",
+      src: "/assets/logos/macs.png",
+      alt: "",
+    },
+  },
+  {
+    position: "Competitive Programming Lead",
+    at: "TLE MEC",
+    description: "The competitive coding and DSA club",
+    duration: "2023-24",
+    logo: {
+      url: "https://tle.mec.ac.in",
+      src: "/assets/logos/tle.svg",
+      alt: "",
+    },
   },
   {
     position: "Project Manager",
     at: "College Fresher Registration Portal",
     description: "A portal for registering freshers for the college",
     duration: "2023-24",
+    logo: {
+      url: "https://mec.ac.in",
+      src: "/assets/logos/mec.png",
+      alt: "",
+    },
   },
 ];
 ---
@@ -31,25 +51,32 @@ const items = [
   {
     items.map((item) => (
       <li>
-        <>
+        <span>
+          <a href={item.logo.url} target="_blank" rel="noopener noreferrer">
+            <img
+              src={item.logo.src}
+              alt={item.logo.alt}
+              style="width: 50px; height: auto; margin-right: 1em; float: left;"
+            />
+          </a>
           <b>
             {item.position}, <span class="duration">{item.duration}</span>
           </b>
           {item.at}
           <p>{item.description}</p>
-        </>
+        </span>
       </li>
     ))
   }
 </ul>
-
 <style>
   ul {
     padding: 0;
   }
 
   ul li {
-    margin: 0 0 1rem 0;
+    list-style: none;
+    margin: 0 0 0.5em 0;
     padding: 0;
     font-size: 1em;
   }
