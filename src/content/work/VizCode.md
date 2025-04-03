@@ -88,7 +88,7 @@ The application follows a modular architecture:
 
 - Jayanth R
 - <a href="https://github.com/Mekhadev2025" target="_blank">Mekha L</a>
-- Srilakshmi R
+- <a href="https://github.com/srilakshmiranganath/">Srilakshmi R</a>
 - **<a href="https://github.com/vigneshsnaik" target="_blank">Vignesh S Naik</a>**
 
 #### **Future Enhancements**

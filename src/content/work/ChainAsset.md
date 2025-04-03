@@ -81,7 +81,7 @@ The architecture comprises three modules:
 
 - <a href="https://github.com/Arshad-3" target="_blank">Mohammed Arshad</a>
 - <a href="https://github.com/Mekhadev2025" target="_blank">Mekha L</a>
-- Srilakshmi R
+- <a href="https://github.com/srilakshmiranganath/">Srilakshmi R</a>
 - **<a href="https://github.com/vigneshsnaik" target="_blank">Vignesh S Naik</a>**
 
 #### Future Enhancements
