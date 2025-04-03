@@ -2,20 +2,21 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-
+import { GoogleAnalytics } from "astro-google-analytics";
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
 }
 
 const {
-  title = "Vignesh S Naik - Software Developer from Kochi, India",  
+  title = "Vignesh S Naik - Software Developer from Kochi, India",
   description = "Welcome to the personal website of Vignesh S Naik, a software developer. Explore projects, skills, and get in touch.",
 } = Astro.props;
 ---
 
 <html lang="en">
   <head>
+    <GoogleAnalytics id="G-7FD9ZS8SH9" />
     <MainHead title={title} description={description} />
     <meta
       name="google-site-verification"
@@ -82,8 +83,8 @@ const {
         min-height: 100%;
         isolation: isolate;
         background:
-          /*noise*/ url("/assets/backgrounds/noise.png") top
-            center/220px repeat,
+          /*noise*/
+          url("/assets/backgrounds/noise.png") top center/220px repeat,
           /*footer*/ var(--bg-image-footer) bottom
             center/var(--bg-gradient-size) no-repeat,
           /*header1*/ var(--bg-image-main-curves) top
@@ -92,9 +93,12 @@ const {
             no-repeat,
           /*base*/ var(--gray-999);
         background-blend-mode:
-          /*noise*/ overlay,
-          /*footer*/ var(--bg-blend-mode), /*header1*/ var(--bg-svg-blend-mode),
-          /*header2*/ normal, /*base*/ normal;
+          /*noise*/
+          overlay,
+          /*footer*/ var(--bg-blend-mode),
+          /*header1*/ var(--bg-svg-blend-mode),
+          /*header2*/ normal,
+          /*base*/ normal;
       }
       @media (forced-colors: active) {
         /* Deactivate custom backgrounds for high contrast users. */
