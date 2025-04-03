@@ -102,4 +102,5 @@ The application follows a modular architecture:
 <p align="center">
 <strong>Links:</strong> 
 <a href="https://github.com/vigneshsnaik/final-year-project/" target="_blank">Front-End repo</a> 
+<a href="https://viz-code.netlify.app/" target="_blank">Deployment</a>
   </p>
