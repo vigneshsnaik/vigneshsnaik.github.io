@@ -4,7 +4,7 @@ description: |
   An online compiler system with real-time data structure visualization.
 period:
   from: "July 2024"
-  to: "Present"
+  to: "March 2025"
 priority: 2
 img: "/assets/works/VizCode/thumbnail.webp"
 tags:
